@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+% START tex-live: problems with russian songs
+ %\usepackage[russian,czech]{babel}
+ %\usepackage[utf8]{inputenc}
+ %\usepackage[T2A,T1]{fontenc}
+ %\usepackage[T1]{fontenc}
+ %\usepackage{helvet}
+% END tex-live
+
+% START xetex:
+\usepackage{xltxtra}
+\setmainfont[Mapping=tex-text]{Linux Libertine O}
+% END xetex
+
+\usepackage[czech]{babel}
+\renewcommand{\familydefault}{\sfdefault}
+
+% conditional for typesetting for saxophone (different transposition needed)
+\usepackage{etoolbox}
+
+\newbool{SAX}
+%\booltrue{SAX}
+%\boolfalse{SAX}
+\IfFileExists{./.saxbool}{\booltrue{SAX}}{\boolfalse{SAX}}
+
+\newbool{PROMO}
+%\booltrue{PROMO}
+%\boolfalse{PROMO}
+\IfFileExists{./.promobool}{\booltrue{PROMO}}{\boolfalse{PROMO}}
+
+\ifbool{PROMO}{
+   \usepackage[a5paper]{geometry}
+   \evensidemargin=-.7cm
+   \oddsidemargin=-.7cm
+   \topmargin=-1.5cm
+   \textheight=15cm
+   \textwidth=12cm
+   \usepackage[lyric,noshading]{songs}
+   \nosongnumbers
+}{
+   \usepackage[a4paper]{geometry}
+   \evensidemargin=-.5cm
+   \oddsidemargin=-.5cm
+   \topmargin=-1.5cm
+   \textheight=24cm
+   \textwidth=18cm
+   \usepackage[chorded,noshading]{songs}
+}
+
+% current date and time to header -- to maintain overview about versions
+\usepackage{fancyhdr}
+\usepackage{datetime}
+
+\fancyhf{}
+\ifbool{SAX}{
+   \fancyhead[L]{\today\ \currenttime \ verze pro saxofon}
+}{
+   \ifbool{PROMO}{
+      \fancyhead[R]{\includegraphics[height=2.5cm]{logo-harfa.png}}
+      \fancyhead[L]{{\bf Harfa Band}\\
+                     \#PunkFolkDoKaždéRodiny \vspace*{.2cm} \\
+                     13.12.2016 Café v Lese \\ 
+                     \vspace*{.2cm} \scriptsize bandzone -- http://bandzone.cz/harfaband \\
+                     FB -- https://www.facebook.com/Harfa-Band-232460110211209 \vspace*{.2cm} }
+   }{
+      \fancyhead[L]{\today\ \currenttime}
+   }
+}
+
+\newcommand{\bsolo}{\beginchorus \bf}
+\newcommand{\esolo}{\endchorus}      
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{verbatim}
+
+%\newindex{songindex}{songindex}
+%\newauthorindex{authorindex}{authorindex}
+%\noversenumbers
+%\nosongnumbers
+
+
+\setlength\baselineadj{-\baselineskip}
+
+\renewcommand\printchord[1]{\bf\sffamily\slshape\large #1}
+\renewcommand\stitlefont[1]{\bf\sffamily\slshape\Large #1}
+
+\renewcommand{\headrulewidth}{0.0pt}
+\pagestyle{fancy}
+
+
+\begin{document}
+
+%\showindex{Seznam písniček podle názvů}{songindex}
+%\showindex{Seznam písniček podle autorů}{authorindex}
+
+\newpage
+\newpage
+
+%\begin{songs}{authorindex,songindex}
+\begin{songs}{}
+\input{list.tex}
+\end{songs}
+
+\end{document}
+
