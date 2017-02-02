@@ -3,7 +3,6 @@ songs/harfa-band/doktorandi-bez-capa.tex
 songs/harfa-band/doktorandi.tex
 songs/harfa-band/hadr-na-holi.tex
 songs/harfa-band/ja-ho-znam.tex
-songs/harfa-band/koleda.tex
 songs/harfa-band/kouzelnik.tex
 songs/harfa-band/laska-v-dilne.tex
 songs/harfa-band/mravokarna-bajka.tex
