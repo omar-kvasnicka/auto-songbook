@@ -10,7 +10,6 @@ OUT_PLAYLIST_NAME=playlists/$(basename $DIR .tex).txt
 
 # if in $DIR is stored just name of the file
 if [ -f "$DIR" ]; then
-   echo 'IM HERE'
    ls -1 $DIR > $OUT_PLAYLIST_NAME
 else
    ls -1 $DIR/*.tex > $OUT_PLAYLIST_NAME
