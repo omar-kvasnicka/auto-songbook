@@ -1,0 +1,5 @@
+songs/voda17/hudsonsky_sify.tex
+songs/voda17/somewhere_over.tex
+songs/voda17/stand_by_me.tex
+songs/voda17/tri_krize.tex
+songs/voda17/youtuber.tex
