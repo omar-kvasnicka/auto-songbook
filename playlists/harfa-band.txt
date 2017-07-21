@@ -1,4 +1,5 @@
 songs/harfa-band/bestie.tex
+songs/harfa-band/ci-je-to-vina.tex
 songs/harfa-band/doktorandi-bez-capa.tex
 songs/harfa-band/doktorandi.tex
 songs/harfa-band/hadr-na-holi.tex
