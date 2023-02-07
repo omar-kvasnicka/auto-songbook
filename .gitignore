@@ -1,4 +1,4 @@
-build/*
+out/*
 *.swp
 *.swo
 *~
@@ -6,3 +6,6 @@ build/*
 *.log
 *.pdf
 
+list.tex
+.saxbool
+.promobool
