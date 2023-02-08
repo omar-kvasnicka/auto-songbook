@@ -16,3 +16,8 @@ jobs:
           ls /repo
       - run: cd /repo && ./make-from-dir.sh songs/harfa-band
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Archive results
+        uses: actions/upload-artifact@v3
+        with:
+          name: pdfs
+          path: /repo/out/
