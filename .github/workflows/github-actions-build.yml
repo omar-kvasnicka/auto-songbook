@@ -1,5 +1,5 @@
-name: GitHub Actions Build
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Build
+run-name: ${{ github.actor }} is building new Zpěvník 🚀
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -11,13 +11,11 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: List files in the repository
-        run: |
-          ls /repo
+
       - run: cd /repo && ./make-from-dir.sh songs/harfa-band
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+
       - name: Archive results
         uses: actions/upload-artifact@v3
         with:
-          name: pdfs
+          name: output-pdfs
           path: /repo/out/
