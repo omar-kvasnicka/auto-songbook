@@ -1,0 +1,21 @@
+name: Build
+run-name: ${{ github.actor }} is building new Zpěvník 🚀
+on: [push]
+jobs:
+  Build-Zpevnik:
+    runs-on: ubuntu-latest
+    container: 
+      image: vipintm/xelatex
+      volumes:
+        - ${{ github.workspace }}:/repo
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - run: cd /repo && ./make-from-dir.sh songs/harfa-band
+
+      - name: Archive results
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-pdfs
+          path: /repo/out/
