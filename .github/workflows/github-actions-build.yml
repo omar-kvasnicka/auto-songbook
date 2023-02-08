@@ -2,7 +2,7 @@ name: Build
 run-name: ${{ github.actor }} is building new Zpěvník 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Build-Zpevnik:
     runs-on: ubuntu-latest
     container: 
       image: vipintm/xelatex
