@@ -12,7 +12,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - run: cd /repo && ./make-from-dir.sh songs/harfa-band
+      - run: cd /repo && ./make-from-list.sh playlists/varsava.txt
 
       - name: Archive results
         uses: actions/upload-artifact@v3
